@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-moz-selection { /* Code for Firefox */
+  color: white;
+  background: #f85a4d;
+}
+
+::selection {
+  color: white;
+  background: #f85a4d;
+}
+
+html { font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif; }
+
+@layer base {
+
+  :root {
+
+    --background: 0deg 0% 96%;
+    --foreground: 220deg 40% 15%;
+    --border: 0deg 0% 76%;
+
+    --accent: 0deg 0% 91%;
+    --accent-foreground: 0deg 20% 72%;
+    --accent-hover: 0deg 0% 88%;
+
+    --muted: 0deg 0% 46%;
+    --muted-foreground: var(--muted);
+
+    --destructive: 0deg 100% 50%;
+    --destructive-foreground: 210deg 40% 98%;
+
+    --popover: var(--background);
+    --popover-foreground: var(--foreground);
+
+    --card: var(--background);
+    --card-foreground: var(--foreground);
+
+    --input: var(--border);
+
+    --primary: var(--accent);
+    --primary-foreground: var(--foreground);
+
+    --secondary: var(--accent);
+    --secondary-foreground: var(--foreground);
+
+    --ring: var(--border);
+
+    --radius: 0.5rem;
+
+  }
+
+}
+
+
+@layer base {
+  body {
+    @apply bg-background text-primary-foreground;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  
+
+}
+
+@layer utilities {
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+  }
+
+  .cube {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    transform-style: preserve-3d;
+  }
+
+  .side {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+  }
+
+  .front { transform: translateZ(90px); }
+  .back { transform: translateZ(-90px) rotateY(180deg); }
+  .right { transform: translateX(90px) rotateY(90deg); }
+  .left { transform: translateX(-90px) rotateY(-90deg); }
+  .top { transform: translateY(-90px) rotateX(90deg); }
+  .bottom { transform: translateY(90px) rotateX(-90deg); }
+
+}
+
+
+@layer responsive {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+}
